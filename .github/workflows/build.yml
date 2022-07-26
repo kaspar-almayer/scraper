@@ -28,7 +28,8 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm run build
-    - run: git add --all
-    - run: git commit -m 'deploy files'
+    - run: git config user.name github-actions
+    - run: git config user.email github-actions@github.com
+    - run: git add .
+    - run: git commit -m "deploy files" 
     - run: git push origin main
-
